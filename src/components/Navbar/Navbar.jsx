@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../../Assets/Images/logo.png";
-import banner from "../../Assets/Images/banner.jpg";
+import logo from "../../assets/Images/logo.png";
 
 // react icons
-import { AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
 
 function Navbar() {
   return (
@@ -26,7 +26,7 @@ function Navbar() {
             </form>
           </li>
           <li className="issn">
-            <a href="#">ISSN (0000-0000)</a>
+            <a href="#">ISSN (0000-0000) | </a>
           </li>
           <i className="langs">
             <button>EN</button>
@@ -34,39 +34,34 @@ function Navbar() {
             <button>UZ</button>
           </i>
           <li className="logIn">
-            <AiOutlineUser></AiOutlineUser>
-            {/* <span>LOG IN</span> */}
+            <FaUserCircle></FaUserCircle>
           </li>
         </ul>
       </div>
 
       <div className="nav-menus">
         <NavLink to="/" className="nav-link">
-          Home
+          ГЛАВНАЯ
         </NavLink>
         <NavLink to="/about" className="nav-link">
-          About
+          О ЖУРНАЛЕ
         </NavLink>
         <NavLink to="/news" className="nav-link">
-          News
+          НОВОСТИ
         </NavLink>
         <NavLink to="/sendArticle" className="nav-link">
-          Send Article
+          Отправить статью
         </NavLink>
         <NavLink to="/currentArticle" className="nav-link">
-          Current Article
+          ТЕКУЩИЙ ВЫПУСК
         </NavLink>
         <NavLink to="/archive" className="nav-link">
-          Archive
+          АРХИВЫ
         </NavLink>
         <NavLink to="/myProfile" className="nav-link">
-          My Profile
+          мой профиль
         </NavLink>
       </div>
-
-      {/* <div className="nav-banner">
-        <img src={banner} alt="Turan International University" />
-      </div> */}
     </div>
   );
 }

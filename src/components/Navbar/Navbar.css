@@ -1,29 +1,24 @@
-.nav-links,
-.nav-menus {
-  padding: 0 100px;
+/* core  */
+.navbar {
+  padding: 0 50px;
   width: 100vw;
   background-color: #efeff2;
+  box-shadow: 0 3px 3px rgb(0 0 0 / 24%);
+  position: fixed;
+}
+
+.nav-links,
+.nav-menus {
+  padding: 10px 0 15px 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-.nav-links {
-  position: fixed;
-  height: 80px;
-}
-
-.nav-menus {
-  height: 34px;
-  z-index: 99999;
-  box-shadow: 0 3px 3px rgb(0 0 0 / 24%);
-  position: fixed;
-  align-items: flex-start;
-  top: 80px;
-}
-
 .nav-icons {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   list-style: none;
 }
@@ -31,7 +26,7 @@
 .nav-search,
 .issn,
 .langs {
-  margin-right: 40px;
+  margin-left: 20px;
 }
 
 .serch-input {
@@ -57,7 +52,7 @@
 }
 
 .langs button {
-  margin-right: 18px;
+  margin-right: 15px;
   color: #a4a4b9;
   font-weight: 700;
   cursor: pointer;
@@ -73,16 +68,6 @@
   cursor: pointer;
   color: #a4a4b9;
   font-weight: 700;
-}
-
-.logIn span {
-  padding-left: 5px;
-}
-
-.nav-banner img {
-  margin-top: 114px;
-  padding: 0;
-  width: 100vw;
 }
 
 .nav-link {

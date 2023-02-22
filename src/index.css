@@ -6,3 +6,13 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.home-page,
+.about-page,
+.news-page,
+.send-article-page,
+.current-article-page,
+.archive-page,
+.my-profile-page {
+  padding: 170px 150px 10px 150px;
+}
