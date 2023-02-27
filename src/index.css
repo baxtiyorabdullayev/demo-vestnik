@@ -7,12 +7,14 @@
   font-family: "Poppins", sans-serif;
 }
 
-.home-page,
+#home-page,
 .about-page,
 .news-page,
 .send-article-page,
 .current-article-page,
 .archive-page,
-.my-profile-page {
+.my-profile-page,
+.login,
+.registration {
   padding: 170px 150px 10px 150px;
 }

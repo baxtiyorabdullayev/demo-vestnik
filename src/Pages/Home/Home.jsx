@@ -10,7 +10,7 @@ import editor from "../../assets/Images/editor.jpg";
 
 function Home() {
   return (
-    <div className="home-page">
+    <div id="home-page">
       <div className="magazine-info-section">
         <img src={magazine} alt="Turan" />
         <div className="info-text">
