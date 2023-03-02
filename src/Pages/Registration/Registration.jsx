@@ -1,7 +1,9 @@
-import axios from "axios";
-import React, { useContext, useState, useEffect } from "react";
-import { StateContext } from "../../context";
 import "./Registration.css";
+import axios from "axios";
+import React, { useContext, useState, useMemo } from "react";
+import { StateContext } from "../../context";
+import Select from "react-select";
+import countryList from "react-select-country-list";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
@@ -24,6 +26,12 @@ function Registration() {
   const [country, setCountry] = useState("");
   const [phone_number, setPhone_number] = useState("");
   const [photo, setPhoto] = useState("");
+
+  const options = useMemo(() => countryList().getData(), []);
+
+  const countryHandler = (country) => {
+    setCountry(country);
+  };
 
   return (
     <div className="registration">
@@ -201,17 +209,14 @@ function Registration() {
           </FloatingLabel>
 
           {/* country  */}
-          <FloatingLabel
-            controlId="floatingSelect"
-            label="Страна"
-            className="mb-3"
-          >
-            <Form.Select aria-label="Floating label select example">
-              <option value="uz" onChange={(e) => setGender(e.target.value)}>
-                Uzbekistan
-              </option>
-            </Form.Select>
-          </FloatingLabel>
+          <Form.Group className="mb-3">
+            <Form.Label>Страна</Form.Label>
+            <Select
+              options={options}
+              value={country}
+              onChange={countryHandler}
+            />
+          </Form.Group>
 
           {/* phone number  */}
           <FloatingLabel
@@ -264,7 +269,7 @@ function Registration() {
                   photo,
                 },
               };
-              // dispatch({ type: "registration", payload: newUser });
+              dispatch({ type: "registration", payload: newUser });
               {
                 console.log(newUser);
               }
