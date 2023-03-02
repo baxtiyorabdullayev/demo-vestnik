@@ -30,7 +30,7 @@ function Registration() {
   const options = useMemo(() => countryList().getData(), []);
 
   const countryHandler = (country) => {
-    setCountry(country);
+    setCountry(country.value);
   };
 
   return (
@@ -157,21 +157,14 @@ function Registration() {
 
           {/* gender  */}
           <FloatingLabel controlId="gender" label="Пол" className="mb-3">
-            <Form.Select aria-label="Floating label select example">
-              <option
-                name="gender"
-                value="male"
-                onChange={(e) => setGender(e.target.value)}
-              >
-                мужчина
-              </option>
-              <option
-                name="gender"
-                value="female"
-                onChange={(e) => setGender(e.target.value)}
-              >
-                женщина
-              </option>
+            <Form.Select
+              aria-label="Floating label select example"
+              onChange={(e) => {
+                setGender(e.target.value);
+              }}
+            >
+              <option value="m">мужчина</option>
+              <option value="f">женщина</option>
             </Form.Select>
           </FloatingLabel>
 
@@ -265,18 +258,21 @@ function Registration() {
                   specialization,
                   affiliation,
                   country,
-                  phone_number,
-                  photo,
+                  // phone_number,
+                  // photo,
                 },
               };
               dispatch({ type: "registration", payload: newUser });
               {
                 console.log(newUser);
               }
-              axios.post(
-                "https://vestnik.tiu-edu.uz/api/v1/register/",
-                newUser
-              );
+              axios.post("https://vestnik.tiu-edu.uz/api/v1/register/", {
+                ...newUser,
+                profile: {
+                  ...newUser.profile,
+                  phone_number: "+" + phone_number,
+                },
+              });
             }}
           >
             Submit
